@@ -1,6 +1,9 @@
 # geometry.py
 
 
+import math
+
+
 def square_area(side_length: float) -> float:
     """
     Calculate the area of a square.
@@ -11,8 +14,9 @@ def square_area(side_length: float) -> float:
     Returns:
     - float: the area of the square.
     """
-    # Write here your code
-    pass
+    if isinstance(side_length, (int, float)):
+        return side_length ** 2
+    raise ValueError("side_length must be a number.")
 
 
 def rectangle_area(base_length: float, height: float) -> float:
@@ -26,8 +30,9 @@ def rectangle_area(base_length: float, height: float) -> float:
     Returns:
     - float: the area of the rectangle.
     """
-    # Write here your code
-    pass
+    if isinstance(base_length, (int, float)) and isinstance(height, (int, float)):
+        return base_length * height
+    raise ValueError("base_length and height must be numbers.") 
 
 
 def triangle_area(base_length: float, height: float) -> float:
@@ -41,8 +46,9 @@ def triangle_area(base_length: float, height: float) -> float:
     Returns:
     - float: the area of the triangle.
     """
-    # Write here your code
-    pass
+    if isinstance(base_length, (int, float)) and isinstance(height, (int, float)):
+        return 0.5 * base_length * height
+    raise ValueError("base_length and height must be numbers.") 
 
 
 def circle_area(radius: float) -> float:
@@ -55,5 +61,6 @@ def circle_area(radius: float) -> float:
     Returns:
     - float: the area of the circle
     """
-    # Write here your code
-    pass
+    if isinstance(radius, (int, float)):
+        return math.pi * radius ** 2
+    raise ValueError("radius must be a number.")
